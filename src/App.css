@@ -1,10 +1,18 @@
 /* Color palatte
 white - #FAFAFA
-black - #212121
+black - #231f20
 blue grey - #607D8B */
 
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
+
+html {
+  font-size: 62.5%;
+}
+
 .App {
+  height: 100vh;
   text-align: center;
-  background-color: #fafafa;
-  color: #212121;
+  background-color: #d44f4f;
+  color: #231f20;
+  font-family: "Ubuntu", sans-serif;
 }
