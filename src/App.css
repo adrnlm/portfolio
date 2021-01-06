@@ -1,7 +1,8 @@
 /* Color palatte
 white - #FAFAFA
 black - #231f20
-blue grey - #607D8B */
+blue grey - #607D8B
+blue grey highlight - #607d8b2a */
 
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap");
 
@@ -10,7 +11,9 @@ html {
 }
 
 .App {
+  position: fixed;
   height: 100vh;
+  width: 100vw;
   text-align: center;
   background-color: #d44f4f;
   color: #231f20;

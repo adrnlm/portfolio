@@ -18,10 +18,10 @@ function App() {
       <div className="App">
         <Nav />
         <Switch>
-          <Route path="/" exact component={Home}/>
-          <Route path="/about" exact component={About}/>
-          <Route path="/design" exact component={Design}/>
-          <Route path="/development" exact component={Development}/>
+          <Route exact path="/"  component={Home}/>
+          <Route exact path="/about"  component={About}/>
+          <Route exact path="/design"  component={Design}/>
+          <Route exact path="/development"  component={Development}/>
         </Switch>
       </div>
     </Router>

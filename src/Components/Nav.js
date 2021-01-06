@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import './Nav.css';
 import logo from "../Logo.svg";
@@ -15,41 +15,45 @@ function Nav() {
     return (
         <div>
             <nav>
-                <Link className="sidebar-toggle" to="#">
+                <NavLink className="sidebar-toggle" to="#">
                     <i className="material-icons hamburger" onClick={showSidebar}>menu</i>
-                </Link>
+                </NavLink>
                 <img className="nav-logo" src={logo} alt="logo" />
                 <ul className="nav-menu">
-                    <Link className="nav-link" to='/'>
+                    <NavLink className="nav-link " to='/'>
                         <li>Home</li>
-                    </Link>
-                    <Link className="nav-link" to='/design'>
+                    </NavLink>
+                    <NavLink className="nav-link" to='/design'>
                         <li>Design</li>
-                    </Link>
-                    <Link className="nav-link" to='/development'>
+                    </NavLink>
+                    <NavLink className="nav-link" to='/development'>
                         <li>Development</li>
-                    </Link>
-                    <Link className="nav-link" to='/about'>
+                    </NavLink>
+                    <NavLink className="nav-link" to='/about'>
                         <li>About Me</li>
-                    </Link>
+                    </NavLink>
                 </ul>
             </nav>
-            <div className="grey-background"></div>
+
+            <div className={sidebarToggle ? 'grey-background active' : 'grey-background'} onClick={showSidebar}></div>
+
             <div className={sidebarToggle ? 'sidebar active' : 'sidebar'}>
-                <img className="sidebar-logo" src={logo} alt="logo" />
+                <div className="sideHead">
+                    <img className="sidebar-logo" src={logo} alt="logo" />
+                </div> 
                 <ul className="sidebar-menu">
-                    <Link className="nav-link" to='/'>
+                    <NavLink exact className="nav-link sidenav" to='/' onClick={showSidebar} activeClassName="current">
                         <li>Home</li>
-                    </Link>
-                    <Link className="nav-link" to='/design'>
+                    </NavLink>
+                    <NavLink exact className="nav-link sidenav" to='/design' onClick={showSidebar} activeClassName="current">
                         <li>Design</li>
-                    </Link>
-                    <Link className="nav-link" to='/development'>
+                    </NavLink>
+                    <NavLink exact className="nav-link sidenav" to='/development' onClick={showSidebar} activeClassName="current">
                         <li>Development</li>
-                    </Link>
-                    <Link className="nav-link" to='/about'>
+                    </NavLink>
+                    <NavLink exact className="nav-link sidenav" to='/about' onClick={showSidebar} activeClassName="current">
                         <li>About Me</li>
-                    </Link>
+                    </NavLink>
                 </ul>
             </div>
         </div>

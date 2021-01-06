@@ -1,7 +1,7 @@
 Nav {
   display: relative;
   display: grid;
-  grid-template-columns: 5% 5% 90%;
+  grid-template-columns: 7rem 5rem auto;
   grid-template-rows: 1fr;
   align-items: center;
   min-height: 6.4rem;
@@ -31,6 +31,7 @@ Nav {
   justify-self: end;
   padding: 0;
   margin: 0;
+  height: 70%;
   position: relative;
   left: -6rem;
   display: flex;
@@ -40,9 +41,31 @@ Nav {
 }
 
 .nav-link {
-  padding: 0 5vh 0 5vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100%;
+  padding: 0 2rem 0 2rem;
+  margin: 0 0.4rem 0 0.4rem;
   color: inherit;
   text-decoration: inherit;
+  background-color: transparent;
+  border-radius: 2.4rem;
+}
+
+.sidebar {
+  z-index: 2;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  left: -100%;
+  width: 25vh;
+  background: #fafafa;
+  transition: 250ms;
 }
 
 .sidebar-logo {
@@ -54,46 +77,86 @@ Nav {
   grid-column: 2/3;
 }
 
-.sidebar {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  top: 0;
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  left: -100%;
-  width: 25vh;
-  background: #fafafa;
+.sideHead {
+  width: 100%;
+  height: 6.4rem;
+  margin-bottom: 0.4rem;
 }
 
 .sidebar-menu {
   justify-content: center;
-  padding: 2rem 0 0 0;
+  padding: 0.8rem 0.8rem 0 0;
   margin: 0;
   list-style: none;
   font-size: 1.6rem;
 }
 
 .grey-background {
+  z-index: 1;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
   opacity: 0;
-  transition: opacity 300ms ease-in-out;
   background-color: #000;
+  pointer-events: none;
+}
+
+.nav-link.sidenav {
+  display: block;
+  height: 4.8rem;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border-radius: 0 24px 24px 0;
 }
 
 .sidebar-menu li {
-  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: left;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  padding: 0 2.4rem 0 1.6rem;
 }
 
 .sidebar.active {
   left: 0;
-  transition: 250ms;
+  transition: 250ms ease-in-out;
+}
+
+.grey-background.active {
+  opacity: 0.5;
+  transition: opacity 300ms ease-in-out;
+  background-color: #000;
+  pointer-events: all;
 }
 
 .sidebar-toggle {
+  display: none;
   text-decoration: inherit;
 }
-.nav-link:hover,
-.sidebar-menu:hover {
-  color: #607d8b;
+.nav-link:hover {
+  color: #231f20;
+  background-color: #607d8b2a;
+  transition: 250ms ease-in-out;
+}
+
+.nav-link:active,
+.nav-link.sidenav.current {
+  color: #fafafa;
+  background-color: #607d8b;
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav-menu {
+    display: none;
+  }
+
+  .sidebar-toggle {
+    display: block;
+    text-decoration: inherit;
+  }
 }
