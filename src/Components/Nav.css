@@ -1,10 +1,12 @@
 Nav {
-  display: relative;
+  z-index: 2;
+  position: fixed;
+  width: 100vw;
   display: grid;
   grid-template-columns: 7rem 5rem auto;
   grid-template-rows: 1fr;
   align-items: center;
-  min-height: 6.4rem;
+  height: 6.4rem;
   background: #fafafa;
   color: #231f20;
 }
@@ -54,7 +56,7 @@ Nav {
 }
 
 .sidebar {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   display: flex;
   flex-direction: column;
