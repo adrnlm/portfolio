@@ -24,7 +24,7 @@ const LogoAnimation = () => {
             animationData: logo,
             duration: 3,
             speed: 'fast',
-            pinSpacing: false,
+            // pinSpacing: false,
             markers: false,
         })
 
@@ -35,7 +35,6 @@ const LogoAnimation = () => {
         return (
             <div className="container">
                 <div className="logoAnimation"/> 
-                {/* <section></section> */}
             </div>
             
         );
