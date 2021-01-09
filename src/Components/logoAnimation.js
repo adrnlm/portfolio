@@ -1,36 +1,43 @@
 import React from 'react';
-import lottie from 'lottie-web';
-import '@lottiefiles/lottie-player';
-import { create } from '@lottiefiles/lottie-interactivity';
+
+// import lottie from 'lottie-web';
+// import '@lottiefiles/lottie-player';
+// import {gsap, TimelineMax} from 'gsap';
+// import { ScrollTrigger } from 'gsap/ScrollTrigger';
+// import { create } from '@lottiefiles/lottie-interactivity';
+
 import '../css/logoAnimation.css';
+import {ScrollLottie} from '../Components/ScrollLottie'
 import logo from './logoAnimation.json';
+
+// gsap.registerPlugin(ScrollTrigger);
 
 const LogoAnimation = () => {
 
+    React.useEffect(() => {
 
-    let container = React.createRef();
+        ScrollLottie({
+            scroller: '.container',
+            target: '.logoAnimation',
+            start: 'top top',
+            scrub: 0.5,
+            animationData: logo,
+            duration: 3,
+            speed: 'fast',
+            pinSpacing: false,
+            markers: false,
+        })
+
+    })
+  
     
 
-
-    React.useEffect(() => {
-        const anim = lottie.loadAnimation({
-            container: container.current, // the dom element that will contain the animation
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            animationData: logo
-          });
-          
-        return () => anim.destroy();    
-    }, []);
-
-
-
         return (
-            <div className="test" ref={container}>
-                {/* <h1>test</h1> */}
-          
-          </div>
+            <div className="container">
+                <div className="logoAnimation"/> 
+                {/* <section></section> */}
+            </div>
+            
         );
                     
     
