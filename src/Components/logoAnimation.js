@@ -25,7 +25,7 @@ const LogoAnimation = () => {
             duration: 3,
             speed: 'fast',
             // pinSpacing: false,
-            markers: false,
+            markers: true,
         })
 
     })

@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import About from './pages/AboutMe';
 import Design from './pages/Design';
 import Development from './pages/Development';
+import LoadingScreen from './Components/loadingScreen'
 
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
@@ -13,9 +14,10 @@ import './App.css';
 
 
 function App() {
-  return (
+  return (   
     <Router>
       <div className="App">
+        <LoadingScreen/>
         <Nav />
         <Switch>
           <Route exact path="/"  component={Home}/>
