@@ -16,7 +16,7 @@ function Home() {
 
     React.useEffect(() => {
 
-        let cursor = gsap.to(
+        gsap.to(
             '.cursor',
             {opacity: 0,
             ease: "power2.inOut",
