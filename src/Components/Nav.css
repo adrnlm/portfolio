@@ -7,7 +7,7 @@ Nav {
   grid-template-rows: 1fr;
   align-items: center;
   height: 6.4rem;
-  background: #fafafa;
+  background: #fafafa70;
   color: #231f20;
 }
 
@@ -43,6 +43,7 @@ Nav {
 }
 
 .nav-link {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -140,16 +141,48 @@ Nav {
   display: none;
   text-decoration: inherit;
 }
-.nav-link:hover {
+
+.nav-link.main::after {    
+  transition: 300ms;
+  height: 5px;
+  content: "";
+  display: block;
+  position: absolute;
+  background-color: #231f20;
+  left: 50%;
+  width: 0%;
+  bottom: 0;
+  height: 0.3rem;
+}
+
+.nav-link.main:hover::after { 
+  width: 100%;
+  left: 0;
+}
+
+
+.nav-link.sidenav:hover {
   color: #231f20;
   background-color: #607d8b2a;
   transition: 250ms ease-in-out;
 }
 
-.nav-link:active,
 .nav-link.sidenav.current {
   color: #fafafa;
   background-color: #607d8b;
+  pointer-events: none;
+}
+
+.nav-link.main.current{
+  color: #fafafa;
+  pointer-events: none;
+  color: #231f20;
+  font-weight: bold;
+}
+
+.nav-link.main.current::after { 
+  width: 100%;
+  left: 0;
 }
 
 @media only screen and (max-width: 1024px) {

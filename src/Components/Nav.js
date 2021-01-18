@@ -20,16 +20,16 @@ function Nav() {
                 </NavLink>
                 <img className="nav-logo" src={logo} alt="logo" />
                 <ul className="nav-menu">
-                    <NavLink className="nav-link " to='/'>
+                    <NavLink exact className="nav-link main" to='/' activeClassName="current">
                         <li>Home</li>
                     </NavLink>
-                    <NavLink className="nav-link" to='/design'>
+                    <NavLink exact className="nav-link main" to='/design' activeClassName="current">
                         <li>Design</li>
                     </NavLink>
-                    <NavLink className="nav-link" to='/development'>
+                    <NavLink exact className="nav-link main" to='/development' activeClassName="current">
                         <li>Development</li>
                     </NavLink>
-                    <NavLink className="nav-link" to='/about'>
+                    <NavLink exact className="nav-link main" to='/about' activeClassName="current">
                         <li>About Me</li>
                     </NavLink>
                 </ul>

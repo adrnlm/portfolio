@@ -5,25 +5,19 @@
   position: relative;
   display: grid;
   grid-template-columns: 50vw auto;
+  grid-template-rows: calc(100vh - 6.4rem) calc(100vh - 6.4rem);
   justify-content: center;
   align-items: center;
   height: calc(100vh - 6.4rem);
   width: 100%;
   /* background-color: red; */
   background-color: #fafafa;
-  /* overflow: auto; */
+  overflow: auto;
 }
 
-/* h1 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  position: relative;
-  margin: 0rem;
-  color: black;
-} */
-
 .intro {
+  grid-column: 1;
+  grid-row: 1;
   margin: 0;
   padding: 0;
   height: inherit;
@@ -37,7 +31,7 @@
   /* background-color: blue; */
 }
 
-h1 {
+.intro h1{
   position: relative;
   text-align: left;
   left: 12vw;
@@ -49,6 +43,8 @@ h1 {
 
 .animContainer {
   /* background-color: red; */
+  grid-column: 2;
+  grid-row: 1;
   margin: 0;
   padding: 0;
   display: flex;
@@ -62,6 +58,39 @@ h1 {
 .animation {
   margin: 0;
   padding: 0;
+  position: relative;
+  left: -6rem;
   height: 70vh;
   /* width: 40vw; */
+}
+
+.text {
+  color: #607d8b;
+}
+
+.recent {
+  position: relative;
+  grid-column: 1/3;
+  grid-row: 2;
+  margin: 0;
+  padding: 0;
+  height: inherit;
+  width: inherit;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+.block {
+  position: relative;
+  grid-row: 2;
+  top: 50%;
+  left: -50%;
+  margin: 0;
+  padding: 0;
+  height: 200%;
+  width: 200%;
+  background-color:#607d8b2a;
+  transform-origin: top center;
+  overflow: hidden;
+  box-shadow: 1rem -1rem 5rem #202b3011;
 }

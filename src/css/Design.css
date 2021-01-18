@@ -1,10 +1,20 @@
 .design {
   padding-top: 6.4rem;
+  margin: 0;
   z-index: 0;
-  position: absolute;
+  position: relative;
   display: flex;
   justify-content: center;
+  align-items: center;
   height: calc(100vh - 6.4rem);
   width: 100%;
-  background-color: rgb(67, 121, 67);
+  background-color: red;
+  /* background-color: #fafafa; */
+  overflow: hidden;
 }
+
+/* h1 {
+  position: relative;
+  margin: 0rem;
+  color: black;
+} */

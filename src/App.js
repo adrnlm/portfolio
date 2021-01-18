@@ -17,7 +17,7 @@ function App() {
   return (   
     <Router>
       <div className="App">
-        <LoadingScreen/>
+        {/* <LoadingScreen/> */}
         <Nav />
         <Switch>
           <Route exact path="/"  component={Home}/>
