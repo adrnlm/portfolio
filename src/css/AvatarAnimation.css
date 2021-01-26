@@ -1,0 +1,22 @@
+.animContainer {
+    /* background-color: red; */
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: inherit;
+    width: 100%;
+  }
+  
+  .animation {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: -6rem;
+    height: 70vh;
+    /* width: 40vw; */
+  }

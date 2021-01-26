@@ -6,8 +6,8 @@ Nav {
   grid-template-columns: 7rem 5rem auto;
   grid-template-rows: 1fr;
   align-items: center;
-  height: 6.4rem;
-  background: #fafafa70;
+  height: 8rem;
+  background: transparent;
   color: #231f20;
 }
 
@@ -38,7 +38,7 @@ Nav {
   left: -6rem;
   display: flex;
   list-style: none;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   font-weight: 400;
 }
 
@@ -91,7 +91,7 @@ Nav {
   padding: 0.8rem 0.8rem 0 0;
   margin: 0;
   list-style: none;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
 }
 
 .grey-background {
@@ -142,7 +142,7 @@ Nav {
   text-decoration: inherit;
 }
 
-.nav-link.main::after {    
+.nav-link.main::after {
   transition: 300ms;
   height: 5px;
   content: "";
@@ -155,11 +155,10 @@ Nav {
   height: 0.3rem;
 }
 
-.nav-link.main:hover::after { 
+.nav-link.main:hover::after {
   width: 100%;
   left: 0;
 }
-
 
 .nav-link.sidenav:hover {
   color: #231f20;
@@ -173,14 +172,14 @@ Nav {
   pointer-events: none;
 }
 
-.nav-link.main.current{
+.nav-link.main.current {
   color: #fafafa;
   pointer-events: none;
   color: #231f20;
   font-weight: bold;
 }
 
-.nav-link.main.current::after { 
+.nav-link.main.current::after {
   width: 100%;
   left: 0;
 }

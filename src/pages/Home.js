@@ -1,65 +1,96 @@
-import React, { useRef } from "react";
-import lottie from 'lottie-web'
+import React from "react";
 import {gsap} from 'gsap';
-import { TextPlugin } from "gsap/TextPlugin";
+import LocomotiveScroll from 'locomotive-scroll';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AvatarAnimation from '../Components/AvatarAnimation'
+import IntroText from "../Components/IntroText";
 
-import avatarAnim from '../Components/Avatar.json'
 import '../css/Home.css';
 
-gsap.registerPlugin(TextPlugin);
 gsap.registerPlugin(ScrollTrigger);
 
 function Home() {
 
-    const animContainer = useRef();
-
-    const words = ['a graphic designer.', 'a web developer.', 'a coffee enthusiast.'];
-
     React.useEffect(() => {
 
-        // Intro Animation
-        gsap.to(
-            '.cursor',
-            {opacity: 0,
-            ease: "power2.inOut",
-            repeat: -1}
-        );
-
-        const masterTl = gsap.timeline({repeat: -1});
-        
-        words.forEach( word => {
-            let tl = gsap.timeline({repeat: 1, yoyo:true});
-            tl.to(".text",{duration:3, delay:1, text: word});
-            masterTl.add(tl);
-        })
-
-        // Lottie files Animation
-        lottie.loadAnimation({
-            container: animContainer.current,
-            renderer: 'svg',
-            animationData: avatarAnim,
-            autoplay: true,
-            loop: true
-        });
-
-        //Scroll Trigger
+        //Scroll Trigger for intro
         gsap.timeline({
             scrollTrigger:{
-                scroller: ".home",
-                trigger:".home",
+                scroller: '.home',
+                trigger:'.intro',
                 pin: false,
-                scrub: 0.2,
+                pinSpacing: false,
+                scrub: 1,
+                markers: false,
+                start: 'bottom 80%',
+                end: 'bottom 40%'
+            }
+        }).to(
+            '.intro', {
+                opacity: 0,
+                ease: 'Power1.easeInOut'
+            },
+            0
+        ).to(
+            '.greeting', {
+                xPercent: -100,
+                ease: 'Power1.easeInOut'
+            },
+            0
+        ).to(
+            '.animContainer', {
+                xPercent: 100,
+                ease: 'Power1.easeInOut'
+            },
+            0
+        )
+
+        // //Scroll Trigger for block
+        // gsap.timeline({
+        //     scrollTrigger:{
+        //         scroller: '.home',
+        //         trigger:'.home',
+        //         pin: false,
+        //         pinSpacing: false,
+        //         scrub: 1,
+        //         markers: false,
+        //         start: 'bottom 80%',
+        //         end: 'bottom 30%'
+        //     }
+        // }).to(
+        //     '.block', {
+        //         rotation: 24,
+        //         duration: 1, 
+        //         ease: 'Power1.easeInOut'
+        //     }
+        // )
+        
+        // Scroll Trigger for text
+        gsap.timeline({
+            scrollTrigger:{
+                scroller: '.home',
+                trigger:'.aboutSection',
+                pin: false,
+                pinSpacing: false,
+                scrub: 1,
                 markers: true,
-                start: 'bottom center',
-                end: 'bottom'
+                start: 'top 60%',
+                end: '+=400px',
+                // end: '+=4000',
             }
         }).to(
             '.block', {
                 rotation: 24,
-                duration: 1, 
+                duration: 10, 
                 ease: 'Power1.easeInOut'
             }
+        ).from(
+            '.aboutContent', {
+                opacity: 0,
+                duration: 5,
+                ease: 'Power1.easeInOut'
+            },
+            5
         )
 
     })
@@ -67,19 +98,17 @@ function Home() {
     return (
         <div className="home">
            <div className="intro"> 
-                <h1 > Hi,</h1>
-                <h1>I'm Adrian,</h1>
-                <h1>
-                    <span className="text"></span>
-                    <span className="cursor">_</span>
-                </h1>
-                
+                <IntroText/>
+                <AvatarAnimation/>
             </div>
-            <div className="animContainer">
-                <div ref={animContainer} className="animation"></div>
-            </div>
-            <div className="recent">
+           
+            <div className="aboutSection">
                 <div className="block"></div>
+                <div className="aboutContent">
+                    <h1 className="title">A little about me</h1>
+                    <span className="content">&emsp;&emsp;An aspiring front-end developer with a passion for graphic design. I thorougly enjoy solving problems and produce inspiring art. I'm currently exploring and expanding my skills in UI/ UX and After Effects. When I'm not working, I like to sit back with a book and a cup of Ethiopian coffee.</span>
+                </div>
+                
             </div>
            
         </div>

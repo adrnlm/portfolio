@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-import './Nav.css';
+import '../css/Nav.css';
 import logo from "../Logo.svg";
 
 
