@@ -22,8 +22,9 @@
     padding: 0;
     margin: 0;
     font-size: 4vw;
+    /* letter-spacing: -.5rem; */
   }
 
   .text {
-    color: #607d8b;
+    color: #607D8B;
   }

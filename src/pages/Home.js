@@ -1,6 +1,5 @@
 import React from "react";
 import {gsap} from 'gsap';
-import LocomotiveScroll from 'locomotive-scroll';
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AvatarAnimation from '../Components/AvatarAnimation'
 import IntroText from "../Components/IntroText";
@@ -12,6 +11,25 @@ gsap.registerPlugin(ScrollTrigger);
 function Home() {
 
     React.useEffect(() => {
+
+        // Scroll Down
+        gsap.timeline({repeat: -1}).from(
+            '.scrollDown',{
+                yPercent: -2,
+                duration: 2,
+                ease: "power1.inOut",
+                repeat: 1
+            }
+        ).from(
+            '.scrollDown',{
+                opacity: 0,
+                duration: 1,
+                ease: "power1.inOut",
+                yoyo: true,
+                repeat: 1
+            },
+            0
+        )
 
         //Scroll Trigger for intro
         gsap.timeline({
@@ -44,38 +62,18 @@ function Home() {
             },
             0
         )
-
-        // //Scroll Trigger for block
-        // gsap.timeline({
-        //     scrollTrigger:{
-        //         scroller: '.home',
-        //         trigger:'.home',
-        //         pin: false,
-        //         pinSpacing: false,
-        //         scrub: 1,
-        //         markers: false,
-        //         start: 'bottom 80%',
-        //         end: 'bottom 30%'
-        //     }
-        // }).to(
-        //     '.block', {
-        //         rotation: 24,
-        //         duration: 1, 
-        //         ease: 'Power1.easeInOut'
-        //     }
-        // )
         
-        // Scroll Trigger for text
+        // Scroll Trigger for about
         gsap.timeline({
             scrollTrigger:{
                 scroller: '.home',
                 trigger:'.aboutSection',
                 pin: false,
                 pinSpacing: false,
-                scrub: 1,
+                scrub: 2,
                 markers: true,
                 start: 'top 60%',
-                end: '+=400px',
+                end: '+=50%',
                 // end: '+=4000',
             }
         }).to(
@@ -90,8 +88,10 @@ function Home() {
                 duration: 5,
                 ease: 'Power1.easeInOut'
             },
-            5
+            20
         )
+
+        
 
     })
 
@@ -100,13 +100,14 @@ function Home() {
            <div className="intro"> 
                 <IntroText/>
                 <AvatarAnimation/>
+                <span className="scrollDown">SCROLL DOWN</span>
             </div>
            
             <div className="aboutSection">
                 <div className="block"></div>
                 <div className="aboutContent">
-                    <h1 className="title">A little about me</h1>
-                    <span className="content">&emsp;&emsp;An aspiring front-end developer with a passion for graphic design. I thorougly enjoy solving problems and produce inspiring art. I'm currently exploring and expanding my skills in UI/ UX and After Effects. When I'm not working, I like to sit back with a book and a cup of Ethiopian coffee.</span>
+                    <h1 className="title"> AB0UT </h1>
+                    <span className="content"> Adrian is an aspiring front-end developer with a passion for graphic design. He's currently expanding his skills in UI/ UX and After Effects. When neither designing nor developing, he likes to sit back with a book and a cup of Ethiopian coffee.</span>
                 </div>
                 
             </div>

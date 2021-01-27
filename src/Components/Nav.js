@@ -21,17 +21,17 @@ function Nav() {
                 <img className="nav-logo" src={logo} alt="logo" />
                 <ul className="nav-menu">
                     <NavLink exact className="nav-link main" to='/' activeClassName="current">
-                        <li>Home</li>
+                        <li>HOME</li>
                     </NavLink>
                     <NavLink exact className="nav-link main" to='/design' activeClassName="current">
-                        <li>Design</li>
+                        <li>DESIGN</li>
                     </NavLink>
                     <NavLink exact className="nav-link main" to='/development' activeClassName="current">
-                        <li>Development</li>
+                        <li>DEVELOPMENT</li>
                     </NavLink>
-                    <NavLink exact className="nav-link main" to='/about' activeClassName="current">
+                    {/* <NavLink exact className="nav-link main" to='/about' activeClassName="current">
                         <li>About Me</li>
-                    </NavLink>
+                    </NavLink> */}
                 </ul>
             </nav>
 
@@ -51,9 +51,9 @@ function Nav() {
                     <NavLink exact className="nav-link sidenav" to='/development' onClick={showSidebar} activeClassName="current">
                         <li>Development</li>
                     </NavLink>
-                    <NavLink exact className="nav-link sidenav" to='/about' onClick={showSidebar} activeClassName="current">
+                    {/* <NavLink exact className="nav-link sidenav" to='/about' onClick={showSidebar} activeClassName="current">
                         <li>About Me</li>
-                    </NavLink>
+                    </NavLink> */}
                 </ul>
             </div>
         </div>
