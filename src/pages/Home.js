@@ -68,27 +68,29 @@ function Home() {
             scrollTrigger:{
                 scroller: '.home',
                 trigger:'.aboutSection',
-                pin: false,
-                pinSpacing: false,
-                scrub: 2,
+                pin: true,
+                pinSpacing: true,
+                scrub: 1,
                 markers: true,
-                start: 'top 60%',
-                end: '+=50%',
+                // start: 'top 60%',
+                start: 'top 10%',
+                end: '+=100%',
                 // end: '+=4000',
             }
-        }).to(
-            '.block', {
-                rotation: 24,
-                duration: 10, 
+        }).from(
+            '.aboutContent', {
+                xPercent: -200,
+                opacity: 0,
+                duration: 2,
                 ease: 'Power1.easeInOut'
             }
-        ).from(
-            '.aboutContent', {
-                opacity: 0,
-                duration: 5,
+        )
+        .to(
+            '.content', {   
+                opacity: 1,
+                duration: 1,
                 ease: 'Power1.easeInOut'
-            },
-            20
+            }
         )
 
         
@@ -100,16 +102,22 @@ function Home() {
            <div className="intro"> 
                 <IntroText/>
                 <AvatarAnimation/>
+                <div className="circle"></div>
                 <span className="scrollDown">SCROLL DOWN</span>
             </div>
            
             <div className="aboutSection">
                 <div className="block"></div>
                 <div className="aboutContent">
-                    <h1 className="title"> AB0UT </h1>
-                    <span className="content"> Adrian is an aspiring front-end developer with a passion for graphic design. He's currently expanding his skills in UI/ UX and After Effects. When neither designing nor developing, he likes to sit back with a book and a cup of Ethiopian coffee.</span>
+                    <h1 className="title"> ABOUT ME</h1>
+                    <span className="content"> I'm an aspiring front-end developer with a passion for graphic design. Crrently expanding my skills in UI/ UX and After Effects.</span>
+                    <span className="content"> When neither designing nor developing, I like to to sit back with a book and a cup of Ethiopian coffee.</span>
                 </div>
                 
+            </div>
+
+            <div className="test">
+
             </div>
            
         </div>
